@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("selfhost.Tools")]
+[assembly: AssemblyTitle("Selfhost.Tools")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("selfhost.Tools")]
+[assembly: AssemblyProduct("Selfhost.Tools")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("afc18ee9-5b56-42fe-9229-00266f4c8fdf")]
+[assembly: Guid("111ccf69-092e-4a92-8f98-066a756ff334")]
 
 // Version information for an assembly consists of the following four values:
 //

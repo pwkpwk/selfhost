@@ -7,6 +7,8 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Selfhost.Service", "Selfhos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selfhost.Worker", "Selfhost.Worker\Selfhost.Worker.csproj", "{C26DABE9-3BC7-4E2F-A595-805A9FE1B0B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selfhost.Tools", "Selfhost.Tools\Selfhost.Tools.csproj", "{111CCF69-092E-4A92-8F98-066A756FF334}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C26DABE9-3BC7-4E2F-A595-805A9FE1B0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C26DABE9-3BC7-4E2F-A595-805A9FE1B0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C26DABE9-3BC7-4E2F-A595-805A9FE1B0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{111CCF69-092E-4A92-8F98-066A756FF334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{111CCF69-092E-4A92-8F98-066A756FF334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{111CCF69-092E-4A92-8F98-066A756FF334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{111CCF69-092E-4A92-8F98-066A756FF334}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

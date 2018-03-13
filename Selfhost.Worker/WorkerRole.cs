@@ -1,6 +1,9 @@
+using Autofac;
+using Autofac.Integration.WebApi;
 using Microsoft.Owin.Hosting;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using Owin;
+using Selfhost.Tools;
 using System;
 using System.Diagnostics;
 using System.Net;
@@ -85,7 +88,17 @@ namespace Selfhost.Worker
 
         private void OwinStartup(IAppBuilder app)
         {
+            Autofac.ContainerBuilder builder = new Autofac.ContainerBuilder();
             HttpConfiguration config = new HttpConfiguration();
+
+            builder.RegisterApiControllers(typeof(WorkerRole).Assembly);
+            builder.RegisterInstance(new Plop()).As<IPlop>();
+            Autofac.IContainer container = builder.Build();
+
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+
+            app.UseAutofacMiddleware(container);
+            app.UseAutofacWebApi(config);
 
             config.MapHttpAttributeRoutes();
             config.EnsureInitialized();
