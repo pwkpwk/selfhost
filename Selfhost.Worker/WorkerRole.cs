@@ -12,6 +12,8 @@ namespace Selfhost.Worker
     using System.Threading;
     using System.Threading.Tasks;
     using System.Web.Http;
+    using System.Web.Http.Dependencies;
+    using Unity;
 
     public class WorkerRole : RoleEntryPoint
     {
@@ -88,18 +90,26 @@ namespace Selfhost.Worker
 
         private void OwinStartup(IAppBuilder app)
         {
-            Autofac.ContainerBuilder builder = new Autofac.ContainerBuilder();
             HttpConfiguration config = new HttpConfiguration();
+            IDependencyResolver resolver;
+#if true
+            Unity.IUnityContainer uc = new Unity.UnityContainer();
+
+            uc.RegisterInstance(typeof(IPlop), new Plop());
+            resolver = new UnityResolver(uc);
+#else
+            Autofac.ContainerBuilder builder = new Autofac.ContainerBuilder();
 
             builder.RegisterApiControllers(typeof(WorkerRole).Assembly);
             builder.RegisterInstance(new Plop()).As<IPlop>();
             Autofac.IContainer container = builder.Build();
 
-            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
-
             app.UseAutofacMiddleware(container);
             app.UseAutofacWebApi(config);
+            resolver = new AutofacWebApiDependencyResolver(container);
+#endif
 
+            config.DependencyResolver = resolver;
             config.MapHttpAttributeRoutes();
             config.EnsureInitialized();
 
