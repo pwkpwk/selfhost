@@ -1,18 +1,18 @@
-using Autofac;
-using Autofac.Integration.WebApi;
-using Microsoft.Owin.Hosting;
-using Microsoft.WindowsAzure.ServiceRuntime;
-using Owin;
-using Selfhost.Tools;
-using System;
-using System.Diagnostics;
-using System.Net;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Http;
-
 namespace Selfhost.Worker
 {
+    using Autofac;
+    using Autofac.Integration.WebApi;
+    using Microsoft.Owin.Hosting;
+    using Microsoft.WindowsAzure.ServiceRuntime;
+    using Owin;
+    using Selfhost.Tools;
+    using System;
+    using System.Diagnostics;
+    using System.Net;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+
     public class WorkerRole : RoleEntryPoint
     {
         private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
